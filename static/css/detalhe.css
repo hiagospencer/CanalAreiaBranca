@@ -1,0 +1,227 @@
+
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+}
+
+body,html{
+    height: 100%;
+    scroll-behavior: smooth;
+}
+
+li,a{
+    color: #FFF;
+}
+
+.active{
+    background-color: rgb(61, 185, 235);
+}
+
+.arrow-up i{
+    position: fixed;
+    bottom: 10%;
+    right: 3%;
+    background-color: #1da1f2;
+    color: #FFF;
+
+    font-size: 22px;
+    padding: 10px;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+
+.arrow-up i:hover{
+    background-color: #97cfe6;
+    transition: background-color 0.6s ;
+}
+
+.logo {
+    width: 100%;
+    height: 300px;
+
+    background-image: url("/static/imagens/logo-canal-areia-branca.png");
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+header{
+    display: flex;
+    width: 100%;
+}
+
+header nav{
+    width: 100%;
+}
+
+header nav ul{
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    list-style: none;
+    background-color: rgba(67, 99, 173, 1);
+}
+
+header nav ul li {
+    padding: 10px 8px;
+    transition: 0.3s;
+}
+
+header nav ul li:hover{
+    background-color: rgb(61, 185, 235);
+
+}
+
+li a i{
+    font-size: 20px;
+}
+li a{
+    text-decoration: none;
+    cursor: pointer;
+    text-transform: uppercase;
+}
+
+/* ================== menu mobile ============= */
+
+.content {
+    display: flex;
+    width: 100%;
+    padding-top: 60px;
+    gap: 15px;
+}
+
+.post{
+    height: 100%;
+    box-shadow: 1px 1px 3px 2px rgba(0, 0, 0, 0.1);
+    margin: 0 auto 10px auto;
+}
+
+.aside{
+    box-shadow: none;
+}
+
+.title h1{
+    color: #333333;
+    font-weight: normal;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 32px;
+    margin-top: 50px;
+    padding: 7px 0 ;
+    text-decoration: none;
+    line-height: 40px;
+}
+
+.title h1:hover{
+    text-decoration: none;
+}
+
+.img-detalhes{
+    width: 70%;
+    margin: 20px auto;
+    padding: 10px 0;
+    box-shadow: 1px 1px 3px 2px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.img-detalhes img{
+    max-width: 100%;
+    width: 100%;
+    height: 300px;
+}
+
+.aside-detalhes .descricao, .title, .autor{
+    width: 90%;
+    margin: 0 auto;
+}
+.descricao p{
+    line-height: 30px;
+}
+
+/* ======== section recomendado =========== */
+
+.recomendados{
+    width: 100%;
+    max-width: 900px;
+    margin-left: 10px;
+    padding-bottom: 10px;
+}
+
+.recomendados h1{
+    text-transform: uppercase;
+    margin-left: 20px;
+}
+
+.outras-noticias{
+    display: flex;
+    gap: 9px;
+    margin: 20px 10px;
+}
+
+.post-recomendado{
+    display: flex;
+    flex-direction: column;
+    width:  calc(100% / 3);
+}
+
+.outras-noticias img{
+    width: 100%;
+    height: 200px;
+    border-radius: 8px;
+}
+
+.outras-noticias .post-recomendado h2{
+    font-size: 18px;
+    font-weight: 600;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    cursor: pointer;
+}
+
+.outras-noticias .post-recomendado h2:hover{
+    transition: 0.3s;
+    color: rgb(46, 128, 236);
+    text-decoration: underline;
+}
+
+@media screen and (max-width: 768px){
+    .img-detalhes img{
+        width: 98%;
+        height: 300px;
+    }
+
+    .descricao, .title, .autor{
+        width: 100%;
+        margin: 0 auto;
+    }
+
+    .aside{
+        width: 100%;
+    }
+
+    .recomendados{
+        width: 100%;
+        margin: 0 auto;
+    }
+
+    .outras-noticias{
+        width: 100%;
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: row;
+        justify-content: center;
+        gap: 20px;
+
+    }
+
+    .post-recomendado{
+        width:  40% ;
+        box-shadow: 1px 1px 3px 2px rgba(0, 0, 0, 0.1);
+        padding: 8px;
+        border-radius: 8px;
+    }
+
+}

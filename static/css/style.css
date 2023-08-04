@@ -1,0 +1,711 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Roboto", sans-serif;
+}
+
+body,html{
+    height: 100vh;
+    scroll-behavior: smooth;
+}
+
+.content {
+    display: flex;
+    width: 100%;
+    padding-top: 60px;
+    gap: 15px;
+}
+
+li,a{
+    color: #FFF;
+}
+
+
+.active{
+    background-color: rgb(61, 185, 235);
+}
+
+.arrow-up i{
+    position: fixed;
+    bottom: 10%;
+    right: 3%;
+    background-color: #1da1f2;
+    color: #FFF;
+
+    font-size: 22px;
+    padding: 10px;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+
+.arrow-up i:hover{
+    background-color: #97cfe6;
+    transition: background-color 0.6s ;
+}
+
+.logo {
+    width: 100%;
+    height: 300px;
+    background-image: url("/static/imagens/logo-canal-areia-branca.png");
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+header{
+    display: flex;
+    width: 100%;
+}
+
+header nav{
+    width: 100%;
+}
+
+header nav ul{
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    list-style: none;
+    background-color: rgba(67, 99, 173, 1);
+}
+
+header nav ul li {
+    padding: 10px 8px;
+    transition: 0.3s;
+}
+
+header nav ul li:hover{
+    background-color: rgb(61, 185, 235);
+
+}
+
+li a i{
+    font-size: 20px;
+}
+li a{
+    text-decoration: none;
+    cursor: pointer;
+    text-transform: uppercase;
+    padding: 10px 0;
+}
+
+
+
+/* ================== menu mobile ============= */
+
+
+
+.menu-mobile{
+    display: none;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    background-color: rgb(31, 30, 30);
+    padding: 0 10px;
+}
+
+.icon-menu{
+    font-size: 25px;
+    color: #FFF;
+    cursor: pointer;
+    padding: 8px 7px;
+
+}
+
+.pesquisar input{
+    border: none;
+    border-radius: 6px;
+    padding: 5px 7px;
+    outline: none;
+    font-style: italic;
+}
+
+.itens-menu{
+    opacity: 0;
+    position: absolute;
+    background-color:rgba(15, 5, 70, 0.7);
+    backdrop-filter: blur(5px);
+    width: 100%;
+    height: 100vh;
+    top: 50%;
+    left: -50%;
+    transform: translate(-50%, -50%);
+    transition: 0.3s;
+}
+
+.show{
+    left: 50%;
+    opacity: 1;
+    transition: 0.3s;
+}
+
+.close {
+    opacity: 0;
+    left: -50%;
+    transition: 0.3s;
+}
+
+
+.itens-menu ul{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 38px;
+    padding-top: 50px;
+}
+
+.itens-menu ul li{
+    list-style: none;
+}
+
+.itens-menu ul li i{
+    position: absolute;
+    top: 5%;
+    right: 8%;
+    cursor: pointer;
+    font-size: 30px;
+    color: #FFF;
+    font-weight: 900;
+}
+
+.itens-menu ul li a{
+    font-weight: 600;
+    font-size: 23px;
+    transition: 0.3s;
+}
+
+.itens-menu ul li a:hover{
+    border-bottom: 4px solid #a5a5a5;
+    padding-bottom: 3px;
+}
+
+
+/* ==================== fim do header ============= */
+
+
+
+.post{
+    width: 70%;
+    margin: 0 auto;
+}
+
+.ultimas-noticias{
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    padding: 0 0 50px 0;
+}
+
+.ultimas-noticias h2{
+    text-transform: uppercase;
+    font-weight: bold;
+    font-style: italic;
+}
+.ultimas-noticias i{
+    font-size: 22px;
+}
+
+.aside{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 1px 1px 3px 2px rgba(0, 0, 0, 0.1);
+    padding: 10px 15px;
+    margin-bottom: 70px;
+}
+
+.img{
+    width: 100%;
+    height: 445px;
+    display: flex;
+    justify-content: center;
+}
+
+.img img{
+    height: 100%;
+}
+
+.title{
+    padding: 0 15px;
+    margin-top: 20px;
+}
+
+.title h1{
+    color: #232323;
+    font-weight: normal;
+    font-size: 25px;
+}
+
+.title h1:hover{
+    text-decoration: underline;
+    color: #1da1f2;
+    transition: color 0.3s;
+}
+
+.autor {
+    padding: 0 15px;
+    margin: 5px 0;
+}
+
+.autor span{
+    font-style: italic;
+    font-size: 14px;
+    color: #9e9e9e;
+    padding: 0 8px;
+}
+
+.autor span:nth-of-type(1){
+    margin-right: 15px;
+}
+
+.descricao{
+    margin-top: 20px;
+    padding: 0 15px;
+}
+
+.descricao p{
+    color: #444;
+    font-size: 16px;
+    line-height: 23px;
+}
+
+.post .aside > a{
+    width: 80px;
+    margin: 10px;
+    background-color: #289dcc;
+    color: #fff;
+    font-size: 14px;
+    text-decoration: none;
+    border-radius: 8px;
+    text-align: center;
+    padding: 3px 2px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.post .aside a:hover{
+    background-color: #67caf1;
+}
+
+/* ================ Fim do Aside ================== */
+
+.grid-post{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 100%;
+
+}
+
+.grid-post > .aside {
+    width: 100%;
+    height: 200px;
+    display: flex;
+    flex-direction: row;
+}
+
+.grid-post > .aside > .descricao-post{
+    display: flex;
+    flex-direction: column;
+}
+
+.grid-post > .aside > .descricao-post .title{
+    padding: 0 15px;
+    margin-top: 0px;
+
+}
+
+.grid-post > .aside > .descricao-post .title h1{
+    font-size: 20px;
+}
+
+.grid-post > .aside > .descricao-post .descricao{
+    margin-top: 0px;
+    padding: 0 15px;
+}
+
+.grid-post > .aside .img{
+    height: 100%;
+    justify-content: left;
+    width: 40%;
+}
+
+.grid-post > .aside .img img{
+    width: 100%;
+    height: 100%;
+}
+
+.grid-post > .aside > .descricao-post .ver-mais a{
+    display: block;
+    width: 80px;
+    margin: 20px 0 0 15px;
+    background-color: #289dcc;
+    color: #fff;
+    font-size: 14px;
+    text-decoration: none;
+    border-radius: 8px;
+    text-align: center;
+    padding: 3px 2px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.grid-post > .aside > .descricao-post .ver-mais a:hover{
+    background-color: #67caf1;
+}
+/* =============== Fim do grid post =================== */
+
+
+
+.patrocinadores{
+    width: 20%;
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+}
+
+.patrocinadores h2{
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.img-patrocinadores{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 40px;
+}
+.img-patrocinadores img{
+    width: 200px;
+    height: 200px;
+
+}
+
+/* ============== Fim do Patrocinadores ============= */
+
+@keyframes slide {
+    from {
+      transform: translateX(0);
+    }
+    to {
+      transform: translateX(-100%);
+    }
+  }
+
+  .logos {
+    display: none;
+    overflow: hidden;
+    padding: 0 0 80px 0;
+    background: white;
+    white-space: nowrap;
+    position: relative;
+  }
+
+  .logos h2{
+    text-align: center;
+    margin-bottom: 30px;
+    font-weight: 600;
+    color: #22212c;
+  }
+
+  .logos:before,
+  .logos:after {
+    position: absolute;
+    top: 0;
+    width: 250px;
+    height: 100%;
+    content: "";
+    z-index: 2;
+  }
+
+  .logos:before {
+    left: 0;
+    background: linear-gradient(to left, rgba(255, 255, 255, 0), white);
+  }
+
+  .logos:after {
+    right: 0;
+    background: linear-gradient(to right, rgba(255, 255, 255, 0), white);
+  }
+
+  .logos:hover .logos-slide {
+    animation-play-state: paused;
+  }
+
+  .logos-slide {
+    display: inline-block;
+    animation: 35s slide infinite linear;
+  }
+
+  .logos-slide img {
+    height: 100px;
+    margin: 0 40px;
+  }
+
+
+/* ================= Fim do slide carrosel ============ */
+.paginate{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 2rem;
+}
+
+.page{
+    list-style: none;
+    display:flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    padding: 0.75rem 1rem;
+    border-radius: 0.5rem;
+}
+
+.page li{
+    margin: 0.25rem;
+    padding: 0.75rem 1rem;
+    border-radius: 0.5rem;
+    color: #ededed;
+}
+
+.page a li{
+    background-color: #363636;
+    border: 1px solid #303030;
+}
+
+.page a:hover li{
+    border-color: #67caf1;
+    color: #1da1f2;
+    box-shadow: 0 0.3rem .5rem #67caf136;
+}
+
+.page a.active-link li{
+    background-color: #67caf1;
+    color: white;
+    border-color: #1da1f2;
+    font-weight: 600;
+    box-shadow: 0 0.5rem 1rem #67caf136;
+}
+
+/* ================== FIM DO PAGINATE ============= */
+
+footer{
+   background-color: #22212c;
+   padding: 25px 5px;
+}
+
+.direitos-footer{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.direitos-footer span{
+    color: #fff;
+    font-size: 15px;
+}
+
+.direitos-footer span a{
+    text-decoration: none;
+    color: #dddddd;
+}
+
+.direitos-footer span a:hover{
+    color: #fff;
+    transition: 0.3s ease-in-out;
+}
+
+.rede-sociais h3{
+    color: #fff;
+    margin-bottom: 20px;
+    font-style: italic;
+    font-weight: 400;
+}
+
+.direitos-footer ul{
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.direitos-footer ul li{
+    position: relative;
+    list-style: none;
+    margin: 0 auto;
+    cursor: pointer;
+}
+
+.direitos-footer ul li a{
+    text-decoration: none;
+}
+
+.direitos-footer ul li a .fa{
+    font-size: 2em;
+    color: #020202;
+}
+
+.direitos-footer ul li a .fa:hover{
+    opacity: 0;
+    transition: opacity 0.2s ease-in;
+}
+
+.direitos-footer ul li::before{
+    position: absolute;
+    font-family: FontAwesome;
+    top: -10px;
+    left: 0;
+    font-size: 2em;
+    width: 100%;
+    height: 0;
+    overflow: hidden;
+    transition: .3s ease-in-out;
+}
+
+.direitos-footer ul li:nth-child(1)::before{
+    content: "\f09a";
+    color: #1da1f2;
+    border-bottom: 4px solid #1da1f2;
+}
+
+.direitos-footer ul li:nth-child(2)::before{
+    content: "\f16d";
+    color: #bc2a8d;
+    border-bottom: 4px solid #bc2a8d;
+}
+
+.direitos-footer ul li:nth-child(3)::before{
+    content: "\f16a";
+    color: #ff0000;
+    border-bottom: 4px solid #ff0000;
+}
+
+.direitos-footer ul li:hover::before{
+    height: 110%;
+}
+
+/* ================= RESPONSIVO =========== */
+
+@media screen and (max-width: 768px){
+    .logo{
+        height: 150px;
+    }
+
+    header > nav {
+        display: none;
+    }
+
+    .menu-mobile{
+        display: flex;
+    }
+
+    .content {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+
+    }
+
+    .post{
+        width: 100%;
+
+    }
+
+    .ultimas-noticias{
+        padding: 0 0 40px 35px;
+
+    }
+
+    .ultimas-noticias h2{
+        text-transform: uppercase;
+        font-weight: bold;
+        font-style: italic;
+        font-size: 22px;
+    }
+
+    .aside{
+        width: 90%;
+        margin: 0 auto 70px auto;
+    }
+
+    .title h1{
+        font-size: 26px;
+    }
+
+    .img{
+        width: 330px;
+        height: 100%;
+    }
+
+    .img img{
+        max-width: 100%;
+
+    }
+
+    .grid-post{
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        justify-content: center;
+        width: 100%;
+
+    }
+
+    .grid-post > .aside {
+        flex-direction: column;
+        width: 88%;
+        height: 100%;
+    }
+
+    .grid-post > .aside .img{
+        height: 100%;
+        width: 100%;
+        margin-bottom: 10px;
+    }
+
+    .grid-post > .aside .img img{
+        height: 100%;
+    }
+
+    .logos {
+        display: block;
+    }
+
+    .patrocinadores{
+        width: 100%;
+        display: none;
+        flex-direction: row;
+        gap: 10px;
+        overflow: hidden;
+    }
+
+
+    .patrocinadores h2{
+        display: none;
+    }
+
+
+    .img-patrocinadores img{
+        max-width: 100%;
+        width: 130px;
+        height: 130px;
+    }
+
+
+    .grid-post > .aside .img img{
+        max-width: 100%;
+    }
+
+    .direitos-footer{
+        flex-direction: column;
+        gap: 50px;
+    }
+
+    .direitos-footer span{
+        padding: 0 20px;
+        text-align: center;
+    }
+}

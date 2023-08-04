@@ -1,0 +1,227 @@
+
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Fique por dentro de tudo que acontece em Areia Branca e região.">
+    <meta name="author" content="Hiago Souza">
+    <meta name="keywords" content="Areia Branca, esportes, prefeitura de areia branca, Hiago Souza">
+    <meta name="robots" content="index,follw">
+
+    <meta property="og:title" content="Canal Areia Branca">
+    <meta property="og:site_name" content="Canal Areia Branca">
+    <meta property="og:url" content="https://canalareiabranca.com.br">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="https://scontent.fjdo1-2.fna.fbcdn.net/v/t39.30808-6/301961791_494884749312294_6449946183287930657_n.png?_nc_cat=110&cb=99be929b-3346023f&ccb=1-7&_nc_sid=09cbfe&_nc_eui2=AeEe0YhwE13-ulorCbMDI_5m0nY2Of94ypbSdjY5_3jKlgr_ToMuN40sCW8yxLu4-2iG460HlFykW3t4kKiBqYP9&_nc_ohc=PnNFHmzR-YwAX86KfBJ&_nc_ht=scontent.fjdo1-2.fna&oh=00_AfAIQYfUAnBa6YlVl6iMGgRM-gY58-h2UksRzRE9QpO_TQ&oe=64D1BEE9">
+    <meta property="og:image:type" content=".png">
+
+    <!-- Favicon -->
+    <link href="{% static 'imagens/canal-areia-branca.ico' %}" rel="icon">
+
+    <!-- ================ Bootstrap icons ================ -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+
+
+    <!-- =================== Google Fonts =============== -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,700;0,900;1,400;1,700&display=swap"
+        rel="stylesheet">
+
+    <!-- ============== css ================= -->
+    <link rel="stylesheet" href="{% static 'css/style.css'%}" />
+
+    <title>Canal Areia Branca</title>
+</head>
+
+<body>
+
+    <div class="arrow-up">
+        <a href="#top"><i class="bi bi-arrow-up"></i></a>
+    </div>
+
+    <div class="logo"></div>
+
+    <header>
+        <nav>
+            <ul>
+                <li><a href="{% url 'post:home' %}"><i class="bi bi-house-door-fill"></i></a></li>
+                <li><a href="{% url 'post:brasil' %}">brasil</a></li>
+                <li><a href="{% url 'post:rn' %}">rio grande do norte</a></li>
+                <li class="active"><a href="{% url 'post:areiabranca' %}">areia branca</a></li>
+                <li><a href="{% url 'post:cultura' %}">cultura</a></li>
+                <li><a href="{% url 'post:esportes' %}">esporte</a></li>
+                <li><a href="{% url 'post:politica' %}">política</a></li>
+                <li><a href="{% url 'post:economia' %}">economia</a></li>
+                <li><a href="{% url 'post:entretenimento' %}">entretenimento</a></li>
+            </ul>
+        </nav>
+    </header>
+
+
+    <!--============  MENU MOBILLE ================= -->
+
+    <div class="menu-mobile">
+        <div class="icon-menu">
+            <i class="bi bi-list"></i>
+        </div>
+
+        <div class="pesquisar">
+            <input type="search" name="pesquisar" id="pesquisar" placeholder="Pesquisar...">
+        </div>
+
+        <div class="itens-menu close">
+
+            <ul>
+                <li class="menu-close"><a href="#"><i class="bi bi-x-lg"></i></a></li>
+                <li><a href="{% url 'post:home' %}">home</a></li>
+                <li><a href="{% url 'post:brasil' %}">brasil</a></li>
+                <li><a href="{% url 'post:rn' %}">rio grande do norte</a></li>
+                <li><a href="{% url 'post:areiabranca' %}">areia branca</a></li>
+                <li><a href="{% url 'post:cultura' %}">cultura</a></li>
+                <li><a href="{% url 'post:esportes' %}">esporte</a></li>
+                <li><a href="{% url 'post:politica' %}">política</a></li>
+                <li><a href="{% url 'post:economia' %}">economia</a></li>
+                <li><a href="{% url 'post:entretenimento' %}">entretenimento</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- =============== FIM DO HEADER ============ -->
+
+
+
+    <main class="content">
+
+        <section class="post">
+
+            <div class="ultimas-noticias">
+                <h2>ultimas notícias de areia branca-rn</h2><i class="bi bi-chevron-double-right"></i>
+
+            </div>
+
+            <section class="grid-post">
+                {% for post in categoria_areia_branca %}
+                <div class="aside">
+
+                    <div class="img">
+                        <a href="{% url 'post:detalhes' post.pk %}">
+                            <img src="{{ post.imagem.url}}" alt="">
+                        </a>
+                    </div><!--img-->
+
+                    <div class="descricao-post">
+                        <div class="title">
+                            <a href="{% url 'post:detalhes' post.pk %}">
+                                <h1>{{ post.titulo}}</h1>
+                            </a>
+                        </div><!--title-->
+
+                        <div class="autor">
+                            <span><i class="bi bi-calendar-date"></i> {{ post.data }}</span>
+                            <span><i class="bi bi-person-fill"></i> {{ post.autor }}</span>
+                        </div><!--autor-->
+
+                        <div class="descricao">
+                            <p>{{ post.resumo|slice:"150"}}...</p>
+                        </div><!--descricao-->
+
+                        <div class="ver-mais">
+                            <a href="{% url 'post:detalhes' post.pk %}" class="btn-aside"> ver mais</a>
+                        </div>
+                    </div><!--descricao-post-->
+
+                </div><!--aside-->
+                {% endfor %}
+            </section><!--grid-post-->
+
+        </section>
+
+        <section class="paginate">
+            <ul class="page">
+                {% if page_obj.has_previous %}
+                <a href="?page=1" class="">
+                    <li>1</li>
+                </a>
+                <a href="?page={{ page_obj.previous_page_number }}">
+                    <li>Anterior</li>
+                </a>
+                {% endif %}
+
+                <a href="" class="active-link" class="active-link">
+                    <li>{{ page_obj.number }}</li>
+                </a>
+
+                {% if page_obj.has_next %}
+
+                <a href="?page={{ page_obj.next_page_number}}">
+                    <li>Próximo</li>
+                </a>
+                <a href="?page={{ page_obj.paginator.num_pages}}">
+                    <li>Ultima &raquo;</li>
+                </a>
+                {% endif %}
+            </ul>
+        </section>
+
+        <div class="logos">
+            <h2>Apoio</h2>
+            <div class="logos-slide">
+                <a href=""><img src="{% static 'imagens/ab-center.gif'%}" /></a>
+                <a href=""><img src="{% static 'imagens/logo-hiago.jpeg'%}" /></a>
+            </div>
+        </div>
+
+    </section>
+
+    <article class="patrocinadores">
+        <h2>Apoio</h2>
+        <div class="img-patrocinadores">
+            <a href=""><img src="{% static 'imagens/ab-center.gif'%}" alt=""></a>
+        </div><!--img-patrocinadores-->
+
+        <div class="img-patrocinadores">
+            <a href=""><img src="{% static 'imagens/logo-hiago.jpeg'%}" alt=""></a>
+        </div><!--img-patrocinadores-->
+
+        <div class="img-patrocinadores">
+            <a href=""><img src="{% static 'imagens/ab-center.gif'%}" alt=""></a>
+        </div><!--img-patrocinadores-->
+
+        <div class="img-patrocinadores">
+            <a href=""><img src="{% static 'imagens/logo-hiago.jpeg'%}" alt=""></a>
+        </div><!--img-patrocinadores-->
+
+        <div class="img-patrocinadores">
+            <a href=""><img src="{% static 'imagens/ab-center.gif'%}" alt=""></a>
+        </div><!--img-patrocinadores-->
+    </article><!--patrocinadores-->
+
+    </main>
+
+    <!-- ================ Fim do post destaque ============== -->
+
+
+    <footer>
+        <div class="direitos-footer">
+            <span>Copyright &copy; 2023 <a href="">Canal Areia Branca.</a> Todos os direitos reservados.</span>
+            <div class="rede-sociais">
+                <h3>Siga nossas redes sociais</h3>
+                <ul>
+                    <li><a href=""><i class="fa fa-facebook"></i></a></li>
+                    <li><a href=""><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
+                    <li><a href=""><i class="fa fa-youtube-play" aria-hidden="true"></i></a></li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+
+    <script src="{% static 'js/script.js'%}"></script>
+    <script src="https://kit.fontawesome.com/8f73d23f57.js" crossorigin="anonymous"></script>
+</body>
+
+</html>
